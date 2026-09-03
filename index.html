@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LF Achados | Grupos VIP de Promoções</title>
+  <meta name="description" content="Entre nos grupos VIP da LF Achados e receba super descontos, promoções e novidades." />
+  <style>
+    :root {
+      --azul: #063b97;
+      --azul-escuro: #032c72;
+      --laranja: #ff5a00;
+      --laranja-claro: #ff7a00;
+      --amarelo: #ffd21f;
+      --branco: #ffffff;
+      --texto: #11213f;
+      --cinza: #eef3fb;
+      --verde: #25d366;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255, 210, 31, .22), transparent 28%),
+        linear-gradient(145deg, var(--azul-escuro), var(--azul) 48%, #0755c6 100%);
+      color: var(--branco);
+      display: flex;
+      justify-content: center;
+      padding: 24px 14px 36px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.97);
+      color: var(--texto);
+      border-radius: 28px;
+      padding: 24px 18px 20px;
+      box-shadow: 0 22px 60px rgba(0,0,0,.28);
+      border: 3px solid rgba(255,122,0,.85);
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .logo-wrap {
+      width: 132px;
+      height: 132px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, var(--amarelo), var(--laranja));
+      box-shadow: 0 10px 28px rgba(255,90,0,.32);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-fallback {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 35%, var(--laranja-claro), var(--laranja) 48%, var(--azul) 49%, var(--azul-escuro) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 900;
+      font-size: 38px;
+      letter-spacing: -2px;
+      border: 4px solid white;
+      text-shadow: 0 2px 5px rgba(0,0,0,.35);
+    }
+
+    h1 {
+      font-size: 30px;
+      color: var(--azul-escuro);
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      line-height: 1.45;
+      color: #4b5870;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .highlight {
+      margin: 18px 0 14px;
+      background: linear-gradient(135deg, #fff4d2, #fff9e8);
+      border: 1px solid #ffe08a;
+      border-radius: 16px;
+      padding: 13px 14px;
+      color: #6a4700;
+      font-size: 14px;
+      line-height: 1.4;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .groups-title {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--azul-escuro);
+      margin: 12px 0 10px;
+    }
+
+    .buttons {
+      display: grid;
+      gap: 12px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #1fbe5a, var(--verde));
+      padding: 16px 16px;
+      border-radius: 16px;
+      font-weight: 800;
+      box-shadow: 0 9px 20px rgba(37,211,102,.24);
+      transition: transform .15s ease, box-shadow .15s ease;
+      border: 2px solid rgba(255,255,255,.7);
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(37,211,102,.32); }
+    .btn:active { transform: scale(.99); }
+
+    .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.18);
+      display: grid;
+      place-items: center;
+      font-size: 19px;
+      flex: 0 0 auto;
+    }
+
+    .btn-copy { flex: 1; }
+    .btn-copy strong { display: block; font-size: 16px; }
+    .btn-copy span { display: block; font-size: 12px; opacity: .92; margin-top: 2px; }
+    .arrow { font-size: 22px; opacity: .9; }
+
+    .trust {
+      margin-top: 17px;
+      background: var(--cinza);
+      border-radius: 15px;
+      padding: 13px;
+      font-size: 12px;
+      color: #526079;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      color: rgba(255,255,255,.82);
+      font-size: 11px;
+      margin-top: 14px;
+      line-height: 1.4;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 9px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--laranja);
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .3px;
+    }
+
+    @media (max-width: 380px) {
+      h1 { font-size: 26px; }
+      .card { padding-left: 14px; padding-right: 14px; }
+      .logo-wrap { width: 116px; height: 116px; }
+    }
+  </style>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1067075619129694');
+    fbq('track', 'PageView');
+  </script>
+</head>
+<body>
+  <noscript>
+    <img height="1" width="1" style="display:none" alt=""
+      src="https://www.facebook.com/tr?id=1067075619129694&ev=PageView&noscript=1" />
+  </noscript>
+
+  <main class="container">
+    <section class="card">
+      <div class="brand">
+        <div class="logo-wrap">
+          <div class="logo-fallback">LF</div>
+        </div>
+        <h1>LF ACHADOS</h1>
+        <p class="subtitle">Super descontos, promoções e novidades selecionadas para você economizar de verdade.</p>
+        <span class="badge">GRUPOS VIP DE ACHADINHOS</span>
+      </div>
+
+      <div class="highlight">🔥 Pare de pagar caro! Entre em um dos nossos grupos e receba achadinhos e promoções direto no WhatsApp.</div>
+
+      <div class="groups-title">Escolha um grupo para entrar 👇</div>
+
+      <div class="buttons">
+        <a class="btn" href="https://chat.whatsapp.com/BuXGAuSL4ybC8toNL02syD" data-group="Grupo 1">
+          <div class="icon">💬</div>
+          <div class="btn-copy"><strong>Entrar no Grupo 1</strong><span>Promoções e achadinhos exclusivos</span></div>
+          <div class="arrow">›</div>
+        </a>
+
+        <a class="btn" href="https://chat.whatsapp.com/GP9eFIaWC7fGxCAmnROHJt" data-group="Grupo 2">
+          <div class="icon">💬</div>
+          <div class="btn-copy"><strong>Entrar no Grupo 2</strong><span>Promoções e achadinhos exclusivos</span></div>
+          <div class="arrow">›</div>
+        </a>
+
+        <a class="btn" href="https://chat.whatsapp.com/J22cvEC6QL24FRfofA4fUA" data-group="Grupo 3">
+          <div class="icon">💬</div>
+          <div class="btn-copy"><strong>Entrar no Grupo 3</strong><span>Promoções e achadinhos exclusivos</span></div>
+          <div class="arrow">›</div>
+        </a>
+
+        <a class="btn" href="https://chat.whatsapp.com/LlUs86hwRRy4ZY0It7GtoT" data-group="Grupo 4">
+          <div class="icon">💬</div>
+          <div class="btn-copy"><strong>Entrar no Grupo 4</strong><span>Promoções e achadinhos exclusivos</span></div>
+          <div class="arrow">›</div>
+        </a>
+      </div>
+
+      <div class="trust">✅ Entrada gratuita • 📲 Promoções no WhatsApp • 🛍️ Achadinhos selecionados pela LF Achados</div>
+    </section>
+
+    <div class="footer">LF Achados • Super descontos e novidades</div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.btn[data-group]').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var groupName = this.getAttribute('data-group');
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', 'WhatsAppGroupClick', {
+            group_name: groupName,
+            source: 'LF Achados Landing Page'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
